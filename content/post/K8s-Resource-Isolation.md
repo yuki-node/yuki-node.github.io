@@ -1,12 +1,17 @@
-+++
-date = '2024-11-10T00:24:01+08:00'
-draft = false
-title = 'K8s 资源隔离'
-description = '本文自顶向下梳理 K8s 资源隔离相关的知识'
-tags = ["K8s"]
-author = "Cookie"
-+++
+---
+date: '2024-11-10T00:24:01+08:00'
+draft: false
+title: 'K8s 资源隔离'
+tags: ["K8s"]
+author: "Cookie"
+---
+
+# 前言
 
 在 K8s 中，资源隔离是一个非常非常重要的概念，确保不同的工作负载之间互不干扰，从而提高系统的稳定性和安全性。
 
 自顶向下看 K8s 资源隔离如图所示：
+
+<!--more-->
+
+xxx
