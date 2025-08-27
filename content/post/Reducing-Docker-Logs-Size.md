@@ -9,7 +9,7 @@ author: "Yuki"
 
 > 翻译原文：https://linuxiac.com/reducing-docker-logs-file-size/
 
-## **前言**
+## 前言
 Docker 是一个十分优秀的工具，能帮助我们快速设置和执行所需的程序，但是我们经常忽略其运行中所产生的日志。
 
 然而最近，我发现我的服务器磁盘空间几乎快满了，通过调查发现 Docker 容器一年内产生了将近 14GB log 文件。
@@ -20,7 +20,7 @@ Docker 容器是无状态的，这意味着它们的日志会在容器重新创�
 
 因此，在继续讨论前，我们先来明确这个重要的问题。
 
-## **重启 vs 重建 Docker 容器**
+## 重启 vs 重建 Docker 容器
 让我们回到上面的案例，在过去一年里，服务被多次重启，意味着 Docker 容器经历了多次停止和启动。但是，他们的日志文件一直保留着并持续增长。
 
 这种情况发生的原因是我们在讨论重启而不是重建 Docker 容器。当服务重启时，Docker 守护进程会优雅地停止正在运行的容器，然后自动启动它。
@@ -48,7 +48,7 @@ Docker 日志通常被保留在本机的以下地址（如果没有被特别指�
 
 现在，我们可以看到所有的 Docker 容器日志，但是我们怎么匹配上这些 ID 和具体的容器呢？
 
-## **通过 ID 找到具体 Docker 容器名**
+## 通过 ID 找到具体 Docker 容器名
 现在我们找到了日志较大的那个文件，ID 就是 `/var/lib/docker/containers/<container-id>`
 如下，使用 "13d26f5771352d299b64804d706b75d549c84afbe8b99927e806bfffbc5e579e"
 
@@ -77,7 +77,7 @@ Docker 日志通常被保留在本机的以下地址（如果没有被特别指�
 
 现在我们已经可以找到我们需要的数据了，接着可以开始清理数据释放磁盘空间了。
 
-## **清理 Docker 容器日志**
+## 清理 Docker 容器日志
 我们可以通过`truncate`命令来清理单个日志内的所有文件，只需要提供日志文件的完整路径，比如：
 
 `truncate -s 0 /var/lib/docker/containers/13d26f5771352d299b64804d706b75d549c84afbe8b99927e806bfffbc5e579e/13d26f5771352d299b64804d706b75d549c84afbe8b99927e806bfffbc5e579e-json.log`
@@ -88,7 +88,7 @@ Docker 日志通常被保留在本机的以下地址（如果没有被特别指�
 
 `truncate -s 0 /var/lib/docker/containers/*/*-json.log`
 
-## **设置 Docker 日志大小限制**
+## 设置 Docker 日志大小限制
 上述方法提供了一个临时解决和 Docker 大日志的方式，但是，经常定期执行命令非常麻烦。
 
 一个更好、更彻底的解决方式是直接限制 Docker 日志文件大小。当日志文件达到限制后，Docker 守护进程会自动轮转这些日志文件，然后按照命名规范存档，比如 `<container_id>-json.log.1`，`<container_id>-json.log.2`。
@@ -135,7 +135,7 @@ Docker 日志通常被保留在本机的以下地址（如果没有被特别指�
 
 ![docker-container-log-conf](/images/Reducing-Docker-Logs-Size/docker-container-log-conf.png)
 
-## **结论**
+## 结论
 管理 Docker 日志大小有助于维护高效和可持续的服务器环境，本文提供了一种管理 Docker 日志大小的策略，并确保使用 Docker 日志的轮转和清理功能，避免日志无序累计。
 
 可以参阅[官方文档](https://docs.docker.com/engine/daemon/)，获取更多有关 "daemon.json" 配置文件的详细信息。
