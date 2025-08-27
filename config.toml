@@ -189,11 +189,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   [params.social]                                         # 社交链接
     a-email = "mailto:2061803022@qq.com"
     # b-stack-overflow = "http://localhost:1313"
-    # c-twitter = "http://localhost:1313"
+    c-twitter = "https://x.com/yuki_yang0202"
     # d-facebook = "http://localhost:1313"
     # e-linkedin = "http://localhost:1313"
     # f-google = "http://localhost:1313"
-    g-github = "https://github.com/Yukiry"
+    g-github = "https://github.com/Yuki"
     # h-weibo = "http://localhost:1313"
     # i-zhihu = "http://localhost:1313"
     # j-douban = "http://localhost:1313"
