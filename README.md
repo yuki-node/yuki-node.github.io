@@ -1,6 +1,6 @@
-# Cookiery.github.io
+# yuki-node.github.io
 
-https://cookiery.github.io/
+https://yuki-node.github.io/
 
 ## Quick Start
 ```shell

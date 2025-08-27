@@ -3,7 +3,7 @@ date: '2024-11-10T00:24:01+08:00'
 draft: false
 title: 'K8s 资源隔离'
 tags: ["K8s"]
-author: "Cookie"
+author: "Yuki"
 ---
 
 # 前言
