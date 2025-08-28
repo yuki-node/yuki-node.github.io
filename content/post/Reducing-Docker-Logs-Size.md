@@ -7,7 +7,7 @@ keywords: ['Docker']
 author: "Yuki"
 ---
 
-> 翻译原文：https://linuxiac.com/reducing-docker-logs-file-size/
+> *本文翻译自：[Reducing Docker Logs File Size](https://linuxiac.com/reducing-docker-logs-file-size/)*
 
 ## 前言
 Docker 是一个十分优秀的工具，能帮助我们快速设置和执行所需的程序，但是我们经常忽略其运行中所产生的日志。
