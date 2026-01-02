@@ -8,3 +8,7 @@ weight: 50
 
 ## 关于本人
 
+邮箱: 
+- yangxuqi@linux.com
+
+- 2061803022@qq.com
